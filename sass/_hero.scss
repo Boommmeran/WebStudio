@@ -59,6 +59,7 @@
   margin-right: auto;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-image: $bg-gradient, url(../images/hero-bgr-mob.jpg);
 
   @media (min-device-pixel-ratio: 2),
