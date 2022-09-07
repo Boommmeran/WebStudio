@@ -1,11 +1,10 @@
 .modal {
   position: absolute;
-  top: 54%;
-  left: 51%;
-  transform: translate(-54%, -51%) scale(1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
 
-  max-width: 528px;
-  min-height: 581px;
+  max-width: 450px;
   background-color: $white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -13,6 +12,11 @@
   padding: 40px;
 
   transition: transform $duration-cubic;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 528px;
+    min-height: 581px;
+  }
 
   &__close {
     position: absolute;
@@ -37,11 +41,15 @@
   }
   &__title {
     font-size: 20px;
-    line-height: calc(23 / 20);
+    line-height: calc(30/20);
     text-align: center;
     letter-spacing: 0.03em;
     color: $title-text-color;
 
     margin-bottom: 12px;
+
+    @media screen and (min-width: 1200px) {
+      line-height: calc(23 / 20);
+    }
   }
 }

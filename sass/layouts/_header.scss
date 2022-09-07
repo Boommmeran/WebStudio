@@ -1,18 +1,37 @@
 .header {
   border-bottom: 1px solid #ececec;
+  width: 100%;
 
   &__container {
+    @media screen and (max-width: 767px) {
+      justify-content: space-between;
+    }
+
     @extend %centered-flex;
   }
 
   &__nav {
-    @extend %centered-flex;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
+    }
+    
   }
 
   &__list {
-    display: flex;
-    column-gap: 50px;
-    margin-left: 93px;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+
+      display: flex;
+      column-gap: 50px;
+      margin-left: 87px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-left: 93px;
+    }
+    
   }
 
   &__link {
@@ -27,37 +46,40 @@
     color: $title-text-color;
     transition: color $duration-cubic;
   }
-}
 
-.logo__accent--black {
-  color: #000000;
-}
-
-.header__link--current {
-  color: $accent-color;
-  padding-left: 2px;
-  padding-right: 2px;
-
-  &::after {
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-
-    content: '';
-    width: 100%;
-    height: 4px;
-    background-color: $accent-color;
-    border-radius: 2px;
+  &__menu--open {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    &:hover {
+      fill: $accent-color;
+    }
+    @media screen and (min-width: 767px) {
+      display: none;
+    }
   }
 }
 
 .contacts {
-  display: flex;
-  margin-left: auto;
-  column-gap: 50px;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-left: auto;
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 30px;
+  }
 
   &__link {
-    padding: 32px 0;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -67,11 +89,155 @@
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: inherit;
+    fill: $prymary-text-color;
 
     transition: color $duration-cubic;
+
+    @media screen and (min-width: 1200px) {
+      padding: 32px 0;
+    }
   }
 
   &__icon {
     fill: currentColor;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: $white-color;
+
+  padding: 48px 40px;
+  transform: translateX(100%);
+  transition: transform $duration-cubic;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  &__close {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    &:hover {
+      fill: $accent-color;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 306px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: calc(47 / 40);
+    letter-spacing: 0.02em;
+    color: $title-text-color;
+    transition: color $duration-cubic;
+  }
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+}
+
+.mobile-contacts {
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 32px;
+
+  &__phone {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: calc(40 / 34);
+    letter-spacing: 0.02em;
+    color: $accent-color;
+
+    @media screen and (max-width: 400px) {
+      font-size: 24px;
+      line-height: calc(28 / 24);
+    }
+  }
+
+  &__mail {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: calc(28 / 24);
+    letter-spacing: 0.02em;
+    color: inherit;
+  }
+}
+
+.mobile-soc {
+  display: flex;
+  gap: 20px;
+
+  &__item {
+    position: relative;
+  }
+
+  &__item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    width: 22px;
+    height: 0;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    transform: rotate(90deg);
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: calc(22 / 18);
+    letter-spacing: 0.02em;
+    color: $accent-color;
+
+    @media screen and (max-width: 400px) {
+      font-size: 12px;
+      line-height: calc(18 / 12);
+    }
+  }
+}
+
+.header__link--current {
+  color: $accent-color;
+  padding-left: 2px;
+  padding-right: 2px;
+
+  &::after {
+
+    @media screen and (min-width: 768px) {
+      position: absolute;
+    bottom: -1px;
+    right: 0;
+
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: $accent-color;
+    border-radius: 2px;
+    }
+    
   }
 }

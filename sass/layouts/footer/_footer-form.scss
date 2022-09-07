@@ -1,10 +1,19 @@
 .footer-form {
-  margin-left: auto;
+  @media screen and (min-width: 1200px) {
+    margin-left: auto;
+  }
 
   &__container {
     display: flex;
-    gap: 12px;
-    align-items: flex-end;
+    row-gap: 20px;
+    
+    @media screen and (mAX-width: 1199px) {
+      flex-direction: column;
+    }
+    @media screen and (min-width: 1200px) {
+      align-items: flex-end;
+      gap: 12px;
+    }
   }
 
   &__wrap {
@@ -23,7 +32,8 @@
   }
 
   &__input {
-    min-width: 358px;
+
+    max-width: 480px;
     height: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
@@ -40,6 +50,14 @@
       letter-spacing: 0.03em;
       color: rgba(255, 255, 255, 0.6);
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      min-width: 450px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+    }
   }
 
   &__button {
@@ -51,6 +69,7 @@
 
     @extend %centered-flex;
     gap: 10px;
+    margin: 0 auto;
 
     width: 200px;
     height: 50px;

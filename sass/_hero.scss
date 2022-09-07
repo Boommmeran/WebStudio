@@ -1,0 +1,94 @@
+.hero {
+  padding: 118px 0;
+  background-color: $secondary-bg-color;
+
+  @media screen and (min-width: 1200px) {
+    padding: 200px 0;
+  }
+
+  &__title {
+    max-width: 360px;
+    margin: 0 auto 30px;
+
+    color: $white-color;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.06em;
+    font-size: 26px;
+    line-height: calc(42 / 26);
+
+    @media screen and (min-width: 1200px) {
+      max-width: 696px;
+      line-height: calc(60 / 44);
+      font-size: 44px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    padding: 10px 24px;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(30 / 16);
+    letter-spacing: 0.06em;
+    background-color: $accent-color;
+    color: $white-color;
+
+    transition: background-color $duration-cubic;
+
+    @media screen and (min-width: 1200px) {
+      padding: 10px 32px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $btn-hover;
+    }
+  }
+}
+
+.owerlay {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: $bg-gradient, url(../images/hero-bgr-mob.jpg);
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: $bg-gradient, url(../images/hero-bgr-mob-2x.jpg);
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: $bg-gradient, url(../images/hero-bgr-tab.jpg);
+    max-width: 768px;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: $bg-gradient, url(../images/hero-bgr-tab-2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: $bg-gradient, url(../images/hero-bgr.jpg);
+    max-width: 1600px;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: $bg-gradient, url(../images/hero-bgr-2x.jpg);
+    }
+  }
+}

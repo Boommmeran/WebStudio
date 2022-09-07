@@ -1,5 +1,12 @@
 .join {
-  margin-left: 70px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 70px;
+  }
 
   &__title {
     font-weight: 700;
@@ -13,6 +20,7 @@
   &__list {
     display: flex;
     gap: 10px;
+    justify-content: center;
   }
 
   &__item {

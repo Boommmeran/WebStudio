@@ -1,13 +1,24 @@
 .footer {
   padding: 60px 0;
 
-  background-color: $secondary-bg-color;
-  &__container {
-    display: flex;
-    align-items: baseline;
+  @media screen and (max-width: 1199px) {
+    text-align: center;
   }
-}
+  
 
-.logo__accent--white {
-  color: $white-color;
+  background-color: $secondary-bg-color;
+
+  &__container {
+    align-items: baseline;
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+
+    @media screen and (max-width: 1199px) {
+      flex-wrap: wrap;
+      column-gap: 165px;
+    }
+  }
 }

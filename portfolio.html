@@ -15,25 +15,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/main.min.css">
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
 
   <body>
     <!--Шапка сайта-->
     <header class="header">
       <div class="header__container container">
+        <a href="./index.html" lang="en" class="logo link"
+          >Web<span class="logo__accent--black">Studio</span></a
+        >
         <nav class="header__nav">
-          <a href="./index.html" lang="en" class="logo link"
-            >Web<span class="logo__accent">Studio</span></a
-          >
           <ul class="header__list list">
             <li class="header__item">
-              <a href="./index.html" class="header__link link"
-                >Студія
-              </a>
+              <a href="./index.html" class="header__link link">Студія </a>
             </li>
             <li class="header__item">
-              <a href="./portfolio.html" class="header__link link header__link--current"
+              <a
+                href="./portfolio.html"
+                class="header__link link header__link--current"
                 >Портфоліо</a
               >
             </li>
@@ -45,10 +45,7 @@
 
         <ul class="contacts list">
           <li class="contacts__item">
-            <a
-              href="mailto:info@devstudio.com"
-              class="contacts__link link"
-            >
+            <a href="mailto:info@devstudio.com" class="contacts__link link">
               <svg class="contact__icon" width="16" height="12">
                 <use href="./images/icons.svg#icon-massage"></use>
               </svg>
@@ -57,19 +54,80 @@
           </li>
           <li class="contacts__item">
             <a href="tel:+380991111111" class="contacts__link link">
-              <svg class="contacts__icon" width="16" height="12">
+              <svg class="contacts__icon" width="10" height="16">
                 <use href="./images/icons.svg#icon-smartphone"></use>
               </svg>
               +38 099 111 11 11
             </a>
           </li>
         </ul>
-
+        <button
+          type="button"
+          class="header__menu--open js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Перемикач мобільного меню"
+        >
+          <svg class="mobile-menu__icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-menu" class="icon-menu"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu js-menu-container" id="mobile-menu">
+        <button type="button" class="mobile-menu__close js-close-menu">
+          <svg class="mobile-menu__icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-close" class="icon-close"></use>
+          </svg>
+        </button>
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list list">
+            <li class="mobile-menu__item">
+              <a href="./index.html" class="mobile-menu__link link">Студія </a>
+            </li>
+            <li class="mobile-menu__item">
+              <a
+                href="./portfolio.html"
+                class="mobile-menu__link link header__link--current"
+                >Портфоліо</a
+              >
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#" class="mobile-menu__link link">Контакти</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="mobile-contacts list">
+          <li class="mobile-contacts__item">
+            <a
+              href="mailto:info@devstudio.com"
+              class="mobile-contacts__mail link"
+              >info@devstudio.com
+            </a>
+          </li>
+          <li class="mobile-contacts__item">
+            <a href="tel:+380991111111" class="mobile-contacts__phone link">
+              +38 099 111 11 11
+            </a>
+          </li>
+        </ul>
+        <ul class="mobile-soc list">
+          <li class="mobile-soc__item">
+            <a href="" class="mobile-soc__link link">Instagram</a>
+          </li>
+          <li class="mobile-soc__item">
+            <a href="" class="mobile-soc__link link">Twitter</a>
+          </li>
+          <li class="mobile-soc__item">
+            <a href="" class="mobile-soc__link link">Facebook</a>
+          </li>
+          <li class="mobile-soc__item">
+            <a href="" class="mobile-soc__link link">LinkedIn</a>
+          </li>
+        </ul>
       </div>
     </header>
 
     <main>
-
       <!-- Specifications -->
 
       <section class="portfolio section">
@@ -97,13 +155,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification1.jpg"
-                    alt="Ноутбук"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification1.jpg    1x,
+                        ./images/specification1-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification1-tab.jpg    1x,
+                        ./images/specification1-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification1-mob.jpg    1x,
+                        ./images/specification1-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification1-mob.jpg"
+                      alt="Ноутбук"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -111,6 +193,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 class="portfolio__sub-title">Технокряк</h2>
                   <p class="portfolio__text">Веб-сайт</p>
@@ -120,13 +203,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification2.jpg"
-                    alt="Двоє чоловіків грають у баскетбол"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification2.jpg    1x,
+                        ./images/specification2-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification2-tab.jpg    1x,
+                        ./images/specification2-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification2-mob.jpg    1x,
+                        ./images/specification2-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification2-mob.jpg"
+                      alt="Двоє чоловіків грають у баскетбол"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -134,6 +241,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 class="portfolio__sub-title">
                     Постер
@@ -146,13 +254,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification3.jpg"
-                    alt="Логотип ресторану"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification3.jpg    1x,
+                        ./images/specification3-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification3-tab.jpg    1x,
+                        ./images/specification3-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification3-mob.jpg    1x,
+                        ./images/specification3-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification3-mob.jpg"
+                      alt="Логотип ресторану"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -160,6 +292,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 class="portfolio__sub-title">
                     Ресторан
@@ -172,13 +305,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification4.jpg"
-                    alt="Навушники"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification4.jpg    1x,
+                        ./images/specification4-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification4-tab.jpg    1x,
+                        ./images/specification4-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification4-mob.jpg    1x,
+                        ./images/specification4-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification4-mob.jpg"
+                      alt="Навушники"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -186,6 +343,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 class="portfolio__sub-title">
                     Проєкт <span lang="en">Prime</span>
@@ -197,13 +355,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification5.jpg"
-                    alt="Дві коробки"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification5.jpg    1x,
+                        ./images/specification5-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification5-tab.jpg    1x,
+                        ./images/specification5-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification5-mob.jpg    1x,
+                        ./images/specification5-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification5-mob.jpg"
+                      alt="Дві коробки"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -211,6 +393,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 class="portfolio__sub-title">
                     Проєкт <span lang="en">Boxes</span>
@@ -222,13 +405,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification6.jpg"
-                    alt="Монітор"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification6.jpg    1x,
+                        ./images/specification6-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification6-tab.jpg    1x,
+                        ./images/specification6-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification6-mob.jpg    1x,
+                        ./images/specification6-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification6-mob.jpg"
+                      alt="Монітор"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -236,6 +443,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 lang="en" class="portfolio__sub-title">
                     Inspiration has no Borders
@@ -247,13 +455,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification7.jpg"
-                    alt="Книга"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification7.jpg    1x,
+                        ./images/specification7-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification7-tab.jpg    1x,
+                        ./images/specification7-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification7-mob.jpg    1x,
+                        ./images/specification7-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification7-mob.jpg"
+                      alt="Книга"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -261,6 +493,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 class="portfolio__sub-title">
                     Видання
@@ -273,13 +506,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification8.jpg"
-                    alt="Ярлик"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification8.jpg    1x,
+                        ./images/specification8-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification8-tab.jpg    1x,
+                        ./images/specification8-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification8-mob.jpg    1x,
+                        ./images/specification8-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification8-mob.jpg"
+                      alt="Ярлик"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -287,6 +544,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 class="portfolio__sub-title">Проєкт LAB</h2>
                   <p class="portfolio__text">Маркетинг</p>
@@ -296,13 +554,37 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link link">
                 <div class="portfolio__thumb">
-                  <img
-                    src="./images/specification9.jpg"
-                    alt="Друк на ноутбуці"
-                    width="370"
-                    height="294"
-                    class="portfolio__img"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/specification9.jpg    1x,
+                        ./images/specification9-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification9-tab.jpg    1x,
+                        ./images/specification9-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/specification9-mob.jpg    1x,
+                        ./images/specification9-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      src="./images/specification9-mob.jpg"
+                      alt="Друк на ноутбуці"
+                      width="450"
+                      height="294"
+                      class="portfolio__img"
+                    />
+                  </picture>
+                  <div class="portfolio__wrap">
                     <p class="portfolio__descr">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
                       функціоналу та сервісів. Все це дозволить відвідувачу
@@ -310,6 +592,7 @@
                       особу.
                     </p>
                   </div>
+                </div>
                 <div class="portfolio__container">
                   <h2 lang="en" class="portfolio__sub-title">
                     Growing Business
@@ -381,7 +664,7 @@
             </li>
           </ul>
         </div>
-        
+
         <form class="footer-form">
           <div class="footer-form__container">
             <div class="footer-form__wrap">
@@ -406,6 +689,12 @@
         </form>
       </div>
     </footer>
-
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/mobile-menu.js"></script>
   </body>
 </html>

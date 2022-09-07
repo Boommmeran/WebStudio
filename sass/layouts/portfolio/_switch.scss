@@ -1,8 +1,23 @@
 .switch {
   display: flex;
+  
   column-gap: 8px;
-  justify-content: center;
-  margin-bottom: 50px;
+  row-gap: 15px;
+  
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    max-width: 326px;
+  }
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
 }
 
 .switch__btn {
@@ -13,7 +28,7 @@
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.63;
+  line-height: calc(26/16);
   letter-spacing: inherit;
   color: $title-text-color;
   background-color: $main-bg-color;
