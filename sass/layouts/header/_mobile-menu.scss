@@ -55,7 +55,7 @@
     color: $title-text-color;
     transition: color $duration-cubic;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 440px) {
       font-size: 30px;
       line-height: calc(37 / 30);
     }
@@ -79,7 +79,7 @@
     letter-spacing: 0.02em;
     color: $accent-color;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 440px) {
       font-size: 24px;
       line-height: calc(28 / 24);
     }
@@ -92,7 +92,7 @@
     letter-spacing: 0.02em;
     color: inherit;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 440px) {
       font-size: 18px;
       line-height: calc(22 / 18);
     }
@@ -102,7 +102,6 @@
 .mobile-soc {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
 
   &__item {
     position: relative;
@@ -118,6 +117,12 @@
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     transform: rotate(90deg);
+
+    @media screen and (max-width: 440px) {
+      width: 12px;
+      top: 5px;
+      right: -15px;
+    }
   }
 
   &__link {
@@ -127,9 +132,9 @@
     letter-spacing: 0.02em;
     color: $accent-color;
 
-    @media screen and (max-width: 400px) {
-      font-size: 12px;
-      line-height: calc(18 / 12);
+    @media screen and (max-width: 440px) {
+      font-size: 11px;
+      line-height: calc(12 / 10);
     }
   }
 }
