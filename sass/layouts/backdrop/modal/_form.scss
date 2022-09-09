@@ -12,6 +12,11 @@
     letter-spacing: 0.01em;
     margin-bottom: 4px;
     color: $prymary-text-color;
+
+    @media screen and (max-width: 400px) {
+      font-size: 10px;
+      line-height: calc(12 / 10);
+    }
   }
 
   &__input {
@@ -32,6 +37,10 @@
 
     &:focus {
       border: 1px solid $accent-color;
+    }
+
+    @media screen and (max-width: 400px) {
+      height: 30px;
     }
   }
 
@@ -78,6 +87,10 @@
       letter-spacing: 0.01em;
       color: rgba(117, 117, 117, 0.5);
     }
+
+    @media screen and (max-width: 400px) {
+      height: 90px;
+    }
   }
   &__btn {
     color: $white-color;
@@ -99,5 +112,10 @@
     &:focus {
       background-color: $btn-hover;
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 14px;
+    line-height: calc(28 / 14);
   }
 }

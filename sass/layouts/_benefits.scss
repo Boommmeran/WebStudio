@@ -10,7 +10,6 @@
   }
 
   &__item {
-    text-align: center;
     width: 100%;
 
     @media screen and (min-width: 768px) {
@@ -43,6 +42,10 @@
     line-height: calc(16/14);
     text-transform: uppercase;
     color: $title-text-color;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
   }
 
   &__descr {

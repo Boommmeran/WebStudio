@@ -54,7 +54,6 @@
 }
 
 .owerlay {
-  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
@@ -71,7 +70,6 @@
 
   @media screen and (min-width: 768px) {
     background-image: $bg-gradient, url(../images/hero-bgr-tab.jpg);
-    max-width: 768px;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
